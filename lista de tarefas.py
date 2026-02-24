@@ -1,4 +1,5 @@
 import os
+
 pasta = os.path.dirname(os.path.abspath(__file__))
 arquivo = os.path.join(pasta, 'lista de tarefas.txt')
 
@@ -57,7 +58,7 @@ while True:
         print('TAREFAS ATUAIS:')
         for i in range(len(lista)):
             print(f'[{i+1}] {lista[i]}')
-            
+
     elif a==4:
         print('Saindo...')
         break
