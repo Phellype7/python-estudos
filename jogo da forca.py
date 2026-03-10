@@ -1,20 +1,103 @@
-palavras = ["amarelo","amiga","amor","ave","avião","avó","balão","bebê","bolo","branco",
-"cama","caneca","celular","céu","clube","copo","doce","elefante","escola", "estojo","faca","foto","garfo","geleia","girafa","janela","limonada","mãe",
-"meia","noite","óculos","ônibus","ovo","pai","pão","parque","passarinho",
-"peixe","pijama","rato","umbigo","açucena","advogado","afta","alambique","alcachofra","algarismo","almanaque", "almofariz","almoxarife","alquimia","altivez","alvíssaras","amendoim",
-"amnésia","amplificar","ampulheta","ansioso","aplaudir","ascensão", "asterisco","atlas","balacobaco","bandolim","barulhento","basquetebol",
-"batráquio","beneficente","berimbau","bicarbonato","brusquidão","bugiganga", "bumerangue","burocracia","caatinga","caboclo","cacareco","cacto","cadarço",
-"cãibra","calibrado","camuflagem","candelabro","cassetete","catalisador", "catequizar","cérebro","chamariz","cicatriz","coincidência","companhia",
-"consciente","crepúsculo","cronologia","deglutir","depredar","destruído",
-"diapasão","digladiar","diretriz","dobradiça","ecossistema","embaixador", "empecilho","entretido","entrevista","envernizar","enxaqueca","enxerido",
-"escangalhado","escaravelho","escombro","esculacho","esfirra","espinafre",
-"esplendor","estetoscópio","exceção","excêntrico","excepcional","faniquito", "fascículo","flexível","frustrado","gargantilha","glândula","glicerina",
-"glorioso","gnomo","grampeador","hamster","helicóptero","hemisfério", "herdeiro","hermético","hierárquico","hieróglifo","hipocrisia","humanizar",
-"idolatrada","imbróglio","inflamado","influência","insignificância",
-"interruptor","invertebrado","iogurte","irascível","lantejoula","licenciado", "losango","madrasta","magnético","manteigueira","marimbondo","mesclar",
-"meteorologia","mexerico","micróbio","microfone","microscópio","milionário", "mordaz","nebulizador","oscilação","paralisado","pedágio","pernóstico",
-"perturbar","piripaque","plissado","pneumático","pneumonia","potiguar",
-"prescindir","presságio","privilégio","prodígio","prostração","prurido", "psicólogo","quadriciclo","quádruplo","reciclar","reflorescer","reivindicar",
-"rescindir","retrógrado","retrovisor","ritmo","sensatez","serelepe",
-"serpentina","simplório","simulacro","sincrônico","sobrevivente","subsídio", "supérfluo","suscetível","termômetro","torácico","travesseiro","trilogia",
-"universidade","vangloriar","vaporizador","ventilador","xilindró", "ziguezague","ziquizira","zodíaco","zumbido"]
+import random
+
+lista_p = ["amarelo","amiga","amor","ave","aviao","avo","balao","bebe","bolo","branco",
+"cama","caneca","celular","ceu","clube","copo","doce","elefante","escola",
+"estojo","faca","foto","garfo","geleia","girafa","janela","limonada","mae",
+"meia","noite","oculos","onibus","ovo","pai","pao","parque","passaro",
+"peixe","pijama","rato","umbigo","cachorro","gato","leao","tigre","vaca","cavalo","porco","galinha",
+"banana","maca","uva","pera","manga","melancia","abacaxi","arroz","feijao","carne","leite","queijo","pao",
+"mesa","cadeira","porta","janela","telhado","parede","bola","boneca","pipa","patins","bicicleta",
+"sol","lua","estrela","nuvem","chuva","vento","rio","mar","lago","praia","ilha",
+"verde","azul","preto","rosa","roxo","camisa","calca","sapato","tenis","meia"]
+
+boneco = [
+"""
+______
+|    O
+|
+|
+|
+|
+""",
+"""
+______
+|    O
+|    |
+|
+|
+|
+""",
+"""
+______
+|    O
+|   /|
+|
+|
+|
+""",
+"""
+______
+|    O
+|   /|\\
+|
+|
+|
+""",
+"""
+______
+|    O
+|   /|\\
+|   / 
+|
+|
+""",
+"""
+______
+|    O
+|   /|\\
+|   / \\
+|
+|
+"""]
+
+letras_us = []
+
+pa = random.choice(lista_p)
+d = ['_']*len(pa)
+e = 0
+
+print('-=-'*10,'JOGO DA FORCA','-=-'*10)
+while True:
+    print(' '.join(d))
+
+    chute = input('Escolha uma letra: ').strip().lower()
+
+    if chute in letras_us:
+        print ('Você já usou essa letra')
+        continue
+    else:
+        letras_us.append(chute)
+
+    if len(chute) != 1:
+        print('Escolha apenas uma letra!!')
+        continue
+
+    if chute in pa:
+        for i in range(len(pa)):
+            if pa[i] == chute:
+                d[i] = chute
+        if '_' not in d:
+            print('Parabéns, Você ganhou!')
+            print(f'A palavra era {pa}')
+            break
+        else:
+            print('Acertou!')
+    else:
+        print('Errou!')
+        print(boneco[e])
+        e+=1
+
+    if e == 6:
+        print('Você perdeu!')
+        print(f'A palavra era {pa}')
+        break
