@@ -14,4 +14,4 @@ else:
 
 p = p-des
 
-print(f'O valor a ser pago é {p:.2f}')
+print(f'O valor a ser pago é R${p:.2f}')
