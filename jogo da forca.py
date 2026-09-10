@@ -1,14 +1,14 @@
 import random
 
-lista_p = ["amarelo","amiga","amor","ave","aviao","avo","balao","bebe","bolo","branco",
-"cama","caneca","celular","ceu","clube","copo","doce","elefante","escola",
-"estojo","faca","foto","garfo","geleia","girafa","janela","limonada","mae",
-"meia","noite","oculos","onibus","ovo","pai","pao","parque","passaro",
-"peixe","pijama","rato","umbigo","cachorro","gato","leao","tigre","vaca","cavalo","porco","galinha",
-"banana","maca","uva","pera","manga","melancia","abacaxi","arroz","feijao","carne","leite","queijo","pao",
+lista_p = ["amarelo","amiga","amor","ave","aviao","balao","bebe","bolo","branco","banana"
+,"cama","caneca","celular","ceu","clube","copo","controle","doce","doido","elefante","elegante","escola",
+"estojo","faca","foto","famoso","garfo","geleia","girafa","janela","joia","limonada","laranja","mae",
+"meia","noite","namorado","oculos","onibus","ovo","pai","pao","parque","passaro",
+"peixe","pijama","rato","rodovia","umbigo","cachorro","gato","leao","tigre","vaca","cavalo","porco","galinha",
+"maca","uva","pera","manga","melancia","abacaxi","arroz","feijao","carne","leite","queijo","pao",
 "mesa","cadeira","porta","janela","telhado","parede","bola","boneca","pipa","patins","bicicleta",
 "sol","lua","estrela","nuvem","chuva","vento","rio","mar","lago","praia","ilha",
-"verde","azul","preto","rosa","roxo","camisa","calca","sapato","tenis","meia"]
+"verde","azul","preto","rosa","roxo","camisa","calca","sapato","tenis"]
 
 boneco = [
 """
